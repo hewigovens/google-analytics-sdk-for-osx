@@ -8,14 +8,6 @@
 
 #import "PublicIP.h"
 
-#import "DDLog.h"
-
-#if DEBUG
-static const int ddLogLevel = LOG_LEVEL_VERBOSE | LOG_LEVEL_INFO | LOG_LEVEL_ERROR | LOG_LEVEL_WARN;
-#else
-static const int ddLogLevel = LOG_LEVEL_INFO | LOG_LEVEL_ERROR | LOG_LEVEL_WARN;
-#endif
-
 @implementation PublicIP
 
 static NSString *ipAddress = nil;
@@ -68,7 +60,7 @@ static NSString *ipAddress = nil;
             }
         }
         @catch (NSException	*exception) {
-            DDLogVerbose(@"Error getting public IP: %@ %@", [exception name], [exception reason]);
+            NSLog(@"Error getting public IP: %@ %@", [exception name], [exception reason]);
             ipAddress = [NSString stringWithFormat:@""];
         }
     }

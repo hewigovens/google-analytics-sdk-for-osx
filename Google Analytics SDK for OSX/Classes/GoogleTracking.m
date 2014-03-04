@@ -11,11 +11,6 @@
 #import "PublicIP.h"
 #import "GoogleEvent.h"
 
-#import "DDLog.h"
-
-static const int ddLogLevel = LOG_LEVEL_VERBOSE | LOG_LEVEL_INFO | LOG_LEVEL_ERROR | LOG_LEVEL_WARN;
-
-
 @implementation GoogleTracking
 
 - (void)main
@@ -35,12 +30,12 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE | LOG_LEVEL_INFO | LOG_LEVEL_ERR
         NSData * imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
         
         if (imageData && [imageData length] > 0)
-            DDLogInfo(@"Analytics event (%@, %@, %@, %@): triggered successfully!", [trackingEvent category], [trackingEvent action], [trackingEvent label], [trackingEvent val]);
+            NSLog(@"Analytics event (%@, %@, %@, %@): triggered successfully!", [trackingEvent category], [trackingEvent action], [trackingEvent label], [trackingEvent val]);
         else
-            DDLogInfo(@"Analytics event (%@, %@, %@, %@): trigger error", [trackingEvent category], [trackingEvent action], [trackingEvent label], [trackingEvent val]);
+            NSLog(@"Analytics event (%@, %@, %@, %@): trigger error", [trackingEvent category], [trackingEvent action], [trackingEvent label], [trackingEvent val]);
     }
     @catch (NSException *exception) {
-        DDLogInfo(@"Analytics event (%@, %@, %@, %@): exception thrown %@", [trackingEvent category], [trackingEvent action], [trackingEvent label], [trackingEvent val], exception);
+        NSLog(@"Analytics event (%@, %@, %@, %@): exception thrown %@", [trackingEvent category], [trackingEvent action], [trackingEvent label], [trackingEvent val], exception);
     }
 }
 

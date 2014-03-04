@@ -11,10 +11,6 @@
 
 #include <stdlib.h> // for random number
 
-#import "DDLog.h"
-
-static const int ddLogLevel = LOG_LEVEL_VERBOSE | LOG_LEVEL_INFO | LOG_LEVEL_ERROR | LOG_LEVEL_WARN;
-
 @implementation TrackingRequest
 
 @synthesize pageTitle = _pageTitle;
@@ -173,7 +169,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE | LOG_LEVEL_INFO | LOG_LEVEL_ERR
 
     NSString *finalURL = [NSString stringWithFormat:@"http://www.google-analytics.com/__utm.gif?%@", gaParams];
 
-    DDLogVerbose(@"Google Analytics URL: %@", finalURL);
+    NSLog(@"Google Analytics URL: %@", finalURL);
 
     return finalURL;
 }

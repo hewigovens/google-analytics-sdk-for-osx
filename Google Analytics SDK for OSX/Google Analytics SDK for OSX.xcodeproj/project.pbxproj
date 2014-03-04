@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4F68C38717D969700012E48A /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F68C38517D969700012E48A /* DDTTYLogger.h */; };
-		4F68C38817D969700012E48A /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F68C38617D969700012E48A /* DDTTYLogger.m */; };
 		CE42F10B166AE7FE005AE3D4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE42F10A166AE7FE005AE3D4 /* Cocoa.framework */; };
 		CE42F115166AE7FE005AE3D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE42F113166AE7FE005AE3D4 /* InfoPlist.strings */; };
 		CE42F121166AE7FE005AE3D4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE42F120166AE7FE005AE3D4 /* SenTestingKit.framework */; };
@@ -31,7 +30,6 @@
 		CE42F151166AE977005AE3D4 /* TrackingRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = CE42F143166AE977005AE3D4 /* TrackingRequest.h */; };
 		CE42F152166AE977005AE3D4 /* TrackingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CE42F144166AE977005AE3D4 /* TrackingRequest.m */; };
 		CE42F156166AEFA6005AE3D4 /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = CE42F154166AEFA6005AE3D4 /* DDLog.h */; };
-		CE42F157166AEFA6005AE3D4 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = CE42F155166AEFA6005AE3D4 /* DDLog.m */; };
 		CE42F158166AEFA6005AE3D4 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = CE42F155166AEFA6005AE3D4 /* DDLog.m */; };
 		CE816B91166AF35D00D1FF53 /* JFUrlUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = CE816B8F166AF35D00D1FF53 /* JFUrlUtil.h */; };
 		CE816B92166AF35D00D1FF53 /* JFUrlUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CE816B90166AF35D00D1FF53 /* JFUrlUtil.m */; };
@@ -279,7 +277,7 @@
 		CE42F0FD166AE7FE005AE3D4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Noah Spitzer-Williams";
 			};
 			buildConfigurationList = CE42F100166AE7FE005AE3D4 /* Build configuration list for PBXProject "Google Analytics SDK for OSX" */;
@@ -347,9 +345,7 @@
 				CE42F14E166AE977005AE3D4 /* PublicIP.m in Sources */,
 				CE42F150166AE977005AE3D4 /* RequestFactory.m in Sources */,
 				CE42F152166AE977005AE3D4 /* TrackingRequest.m in Sources */,
-				CE42F157166AEFA6005AE3D4 /* DDLog.m in Sources */,
 				CE816B92166AF35D00D1FF53 /* JFUrlUtil.m in Sources */,
-				4F68C38817D969700012E48A /* DDTTYLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +393,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -427,7 +422,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -456,7 +450,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classes/Google Analytics SDK for OSX-Prefix.pch";
 				INFOPLIST_FILE = "Classes/Google Analytics SDK for OSX-Info.plist";
-				INSTALL_PATH = "@rpath";
+				INSTALL_PATH = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -472,7 +466,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classes/Google Analytics SDK for OSX-Prefix.pch";
 				INFOPLIST_FILE = "Classes/Google Analytics SDK for OSX-Info.plist";
-				INSTALL_PATH = "@rpath";
+				INSTALL_PATH = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
